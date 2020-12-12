@@ -1,6 +1,5 @@
-import React from "react";
 import tw, { styled } from "twin.macro";
 
-export const Button = () => (
-  <button css={[tw`text-yearn-blue`]}>hello world</button>
-);
+const Button = styled.button(() => [tw`text-yearn-blue`]);
+
+export { Button };
