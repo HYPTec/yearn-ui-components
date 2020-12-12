@@ -41,5 +41,20 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "lint-staged": {
+    "*.{css,less,scss,html,json,jsx,js}": [
+      "prettier -w"
+    ],
+    "*.{jsx, js}": [
+      "eslint —-max-warnings 0"
+    ]
   }
 }
